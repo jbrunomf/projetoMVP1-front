@@ -48,7 +48,7 @@ const getProducts = async () => {
     fetch(url, {method: 'GET'}).then((response) => response.json())
         .then((data) => {
             console.log('data: ', data)
-            data.forEach(item => appendToList(item.id, 'teste', 12))
+            data.forEach(item => appendToList(item.id, item.nome, item.valor))
         })
         .catch((error) => {
             console.log(error);
