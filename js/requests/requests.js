@@ -1,19 +1,19 @@
-const removeElement = () => {
-    let close = document.getElementsByClassName("close");
-    // var table = document.getElementById('myTable');
-    let i;
-    for (i = 0; i < close.length; i++) {
-        close[i].onclick = function () {
-            let div = this.parentElement.parentElement;
-            const nomeItem = div.getElementsByTagName('td')[0].innerHTML
-            if (confirm("Você tem certeza?")) {
-                div.remove()
-                deleteItem(nomeItem)
-                alert("Removido!")
-            }
-        }
-    }
-}
+// const removeElement = () => {
+//     let close = document.getElementsByClassName("close");
+//     // var table = document.getElementById('myTable');
+//     let i;
+//     for (i = 0; i < close.length; i++) {
+//         close[i].onclick = function () {
+//             let div = this.parentElement.parentElement;
+//             const nomeItem = div.getElementsByTagName('td')[0].innerHTML
+//             if (confirm("Você tem certeza?")) {
+//                 div.remove()
+//                 deleteItem(nomeItem)
+//                 alert("Removido!")
+//             }
+//         }
+//     }
+// }
 
 
 const insertButton = (parent) => {
@@ -35,11 +35,11 @@ const appendToList = (id, product, price) => {
         cel.textContent = item[i];
     }
     insertButton(row.insertCell(-1))
-    document.getElementById("newInput").value = "";
-    document.getElementById("newQuantity").value = "";
-    document.getElementById("newPrice").value = "";
+    // document.getElementById("newInput").value = "";
+    // document.getElementById("newQuantity").value = "";
+    // document.getElementById("newPrice").value = "";
 
-    removeElement()
+    // removeElement()
 }
 
 const getProducts = async () => {
