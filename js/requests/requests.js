@@ -54,3 +54,28 @@ const getProducts = async () => {
             console.log(error);
         })
 }
+
+const cadastrarProduto = async () => {
+    //teste imagem
+    const inputElement = document.getElementById("imagem");
+    let file = inputElement.files[0];
+    //fim teste imagem
+    let nome_produto = document.getElementById('nome_produto').value;
+    let preco_custo = document.getElementById('preco_custo').value;
+    let preco_venda = document.getElementById('preco_venda').value;
+    let is_novo = document.getElementById('is_novo').value;
+
+    const formData = new FormData();
+    formData.append('descricao', nome_produto);
+    formData.append('preco_custo', preco_custo);
+    formData.append('preco_venda', preco_venda);
+    formData.append('imagem', file);
+    formData.append('is_novo', is_novo);
+
+    let url = 'http://127.0.0.1:5000/produto';
+    fetch(url, {method: 'POST', body: formData})
+        .then((response) => response.json())
+        .catch((error) => {
+            console.log(error);
+        })
+}
