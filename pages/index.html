@@ -104,69 +104,130 @@
         </div>
     </div>
 
+    <!--    INÍCIO NAVBAR-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Brechó do João</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_produtos">Catalogo Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_novo_produto">Novo Produto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Sobre Nós</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--    FIM NAVBAR -->
+
     <main>
-        <section content="produtos">
-            <div>
+        <!--        LISTAGEM DE PRODUTOS-->
+        <section content="section_produtos" id="section_produtos">
+            <div class="text-center mb-5">
                 <h1>Nossos produtos</h1>
+                <table class="table table-hover tbl-produtos" id="tbl-produtos">
+                    <thead>
+                    <tr>
+                        <td>Código</td>
+                        <td>
+                            Produto
+                        </td>
+                        <td>Preço Custo</td>
+                        <td>Preço Venda</td>
+                        <td>É Novo</td>
+                        <td>Data Criação</td>
+                        <td>Imagem</td>
+                        <td>Remover</td>
+                    </tr>
+                    </thead>
+                </table>
+                <button class="btn btn-primary" onclick="getProdutos()">Carregar Produtos</button>
             </div>
         </section>
 
-        <section class="novoProduto">
-            <div>
+        <!--        FIM LISTAGEM DE PRODUTOS-->
+
+        <!--        CADASTRO DE PRODUTO-->
+        <section class="novoProduto" id="section_novo_produto mb-5">
+            <div class="text-center">
                 <h1>Cadastrar Novo Produto</h1>
-                <label for="nome_produto">Produto</label>
-                <input type="text" id="nome_produto" placeholder="Digite aqui o nome do Produto">
-
-                <label for="preco_custo">Preço de Custo</label>
-                <input type="text" id="preco_custo" placeholder="Preço de Custo">
-
-                <label for="preco_venda">Preço de Venda</label>
-                <input type="text" id="preco_venda" placeholder="Preço de Venda">
-
-                <label for="is_novo">Novo?</label>
-                <input type="checkbox" id="is_novo">
-
-                <label for="imagem">Imagem do Produto</label>
-                <input type="file" id="imagem" name="imagem" placeholder="Imagem do Produto">
-
-                <button onclick="cadastrarProduto()">Cadastrar</button>
+                <div style="width: 100%; max-width: 600px; margin: auto;">
+                    <form>
+                        <div class="form-group">
+                            <label for="nome_produto">Produto</label>
+                            <input type="text" class="form-control" id="nome_produto" placeholder="Digite o nome do produto">
+                        </div>
+                        <div class="form-group">
+                            <label for="preco_custo">Preço de Custo</label>
+                            <input type="number" class="form-control" id="preco_custo" placeholder="Digite o preço de custo">
+                        </div>
+                        <div class="form-group">
+                            <label for="preco_venda">Preço de Venda</label>
+                            <input type="number" class="form-control" id="preco_venda" placeholder="Digite o preço de venda">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="is_novo">
+                            <label class="form-check-label" for="is_novo">Novo?</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="imagem">Imagem do Produto:</label>
+                            <input type="file" class="form-control-file" id="imagem" name="imagem">
+                        </div>
+                        <div class="mt-2">
+                        <button type="submit" class="btn btn-secondary" onclick="cadastrarProduto()">Cadastrar Produto</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
+
+        <!--        FIM CADASTRO DE PRODUTO -->
     </main>
 
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
         <div class="row">
-            <div class="col-12 col-md">
-                <small class="d-block mb-3 text-body-secondary">&copy; 2023-2024</small>
-            </div>
+            <!--            <div class="col-12 col-md">-->
+            <!--                <small class="d-block mb-3 text-body-secondary">&copy; 2023-2024</small>-->
+            <!--            </div>-->
             <div class="col-6 col-md">
-                <h5>Features</h5>
+                <h5>Tend Tudo</h5>
                 <ul class="list-unstyled text-small">
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Sobre Nós</a></li>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Catálogo de Produtos</a>
                     </li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Nossa Equipe</a></li>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Espaço Físico</a>
+                    </li>
                 </ul>
             </div>
             <div class="col-6 col-md">
-                <h5>Resources</h5>
+                <h5>Contato</h5>
                 <ul class="list-unstyled text-small">
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Fale Conosco</a></li>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Tel: (65)3322-2233</a></li>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Cuiabá - MT</a></li>
                 </ul>
             </div>
             <div class="col-6 col-md">
                 <h5>About</h5>
                 <ul class="list-unstyled text-small">
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Categorias</a></li>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Roupas</a></li>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Calçados</a></li>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Acessórios</a></li>
                 </ul>
             </div>
         </div>
