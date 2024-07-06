@@ -18,20 +18,16 @@ const adicionarNaLista = (id, descricao, preco_custo, preco_venda, is_novo, data
     }
 
 
-    // Crie um novo elemento de botão
     let btn = document.createElement('button');
 
-    // Defina o conteúdo do botão
     btn.textContent = 'Excluir';
 
-    // Adicione um manipulador de eventos click para chamar a função desejada
     btn.addEventListener('click', () => {
         deletarProduto(id)
     });
 
     insertButton(row.insertCell(-1))
 
-    // Adicione o botão à última célula
     let cel = row.insertCell();
     cel.appendChild(btn);
 }
