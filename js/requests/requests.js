@@ -100,12 +100,9 @@ const cadastrarProduto = async () => {
 }
 
 const atualizarTabela = () => {
-    // Primeiro, limpe a tabela
     let table = document.getElementById("tbl-produtos")
     for (let i = table.rows.length - 1; i > 0; i--) {
         table.deleteRow(i);
     }
-
-    // Então, readquira os dados e preencha a tabela
     getProdutos();
 }
